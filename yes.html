@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mwah <3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img class="mainImg" src="imgs/mwah.gif" height="498" width="498"/>
+        <p>YAY! See you on the 14th!</p>
+    </div>
+    <img class="heart" src="hearts/1.png" height="50" width="25"/>
+    <img class="heart" src="hearts/2.png" height="50" width="25"/>
+    <img class="heart" src="hearts/3.png" height="50" width="25"/>
+    <img class="heart" src="hearts/4.png" height="50" width="25"/>
+    <img class="heart" src="hearts/1.png" height="50" width="25"/>
+    <img class="heart" src="hearts/2.png" height="50" width="25"/>
+    <img class="heart" src="hearts/3.png" height="50" width="25"/>
+    <img class="heart" src="hearts/4.png" height="50" width="25"/>
+    <img class="heart" src="hearts/1.png" height="50" width="25"/>
+    <img class="heart" src="hearts/2.png" height="50" width="25"/>
+    <img class="heart" src="hearts/3.png" height="50" width="25"/>
+    <img class="heart" src="hearts/4.png" height="50" width="25"/>
+
+</body>
+<script>
+    var img = document.getElementsByClassName("heart")
+    for (let i = 0; i < img.length; i++) {
+        var j = 0;
+        let int = setInterval(func=>{
+            j++;
+            if (j>1){
+                clearInterval(int)
+            }
+        },100)
+        var number = Math.random();
+        img[i].style.position = 'absolute'
+        img[i].style.top = '-200px'
+        img[i].style.left = number*500 + 500 + "px";
+        img[i].style.width = '150px'
+
+
+        setInterval(fall,(Math.random() + 0.5) * 5,img[i])
+
+        console.log(number)
+
+    }
+    function fall(elem) {
+        var pos = Number(elem.style.top.split("px")[0]);
+        elem.style.top = pos + 1 + "px";
+        if (pos > 800)
+            elem.style.top = "-200px";
+    }
+</script>
+</html>
